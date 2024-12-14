@@ -22,46 +22,45 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
     ```bash
     git clone https://github.com/IgorNCosta14/teste-yooga.git
     cd teste-yooga
+    ```
 
 2. Instale as dependências do projeto:
     ```bash
     npm install
+    ```
 
 3. Crie um arquivo `.env` na raiz do projeto e configure a chave de API do Google Maps:
     ```env
     GOOGLE_MAPS_API_KEY=your_google_maps_api_key
     PORT=3000
+    ```
 
 4. Compile o projeto:
    ```bash
    npm run build
+    ```
 
 5. Inicie o servidor:
    ```bash
    npm start
+    ```
 
-6. Teste os endpoints disponíveis:
+## Teste os endpoints disponíveis:
 
 #### **1º Desafio - Cálculo de Distâncias**
 
 **Input:**
 Faça uma requisição `GET` para o endpoint `/distances` com as coordenadas fornecidas:
-    ```bash
+```bash
     curl -X GET "http://localhost:3000/distances?lat=-20.316635319330466&lon=-40.29026198968673"
-
+```
 **Output:**
 Exemplo de resposta em JSON para o **1º Desafio - Cálculo de Distâncias**:
 
-    ```json
     {
         "status": "success",
         "message": "Distances calculated successfully.",
         "distances": [
-            {
-                "point": 1,
-                "latitude": -22.951321545009705,
-                "longitude": -43.21040413125191,
-                "distance": 456.78
-            }, ...
+            "Ponto 1 (Latitude -22.951321545009705, Longitude -43.21040413125191) - Distância 420600m"
         ]
     }
