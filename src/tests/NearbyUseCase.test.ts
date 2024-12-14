@@ -98,7 +98,7 @@ describe("NearbyUseCase", () => {
         ]);
 
         expect(mockGoogleMapsAdapter.fetchNearbyPlaces).toHaveBeenCalledTimes(2);
-        
+
         expect(mockGoogleMapsAdapter.fetchNearbyPlaces).toHaveBeenCalledWith({ 
             lat: -22.951321545009705, 
             lon: -43.21040413125191 
@@ -110,13 +110,13 @@ describe("NearbyUseCase", () => {
         });
     });
 
-    it("should throw an error if Google Maps Adapter fails", async () => {
+    it("should return an error if the search for nearby places fails", async () => {
         mockGoogleMapsAdapter.fetchNearbyPlaces.mockRejectedValue(
             new Error("Error when searching: Google Maps API error")
         );
 
         const coordinates = [
-            { latitude: 10, longitude: 20 }
+            { latitude: -22.951321545009705, longitude: -43.21040413125191 }
         ];
 
         await expect(
@@ -126,8 +126,8 @@ describe("NearbyUseCase", () => {
         expect(mockGoogleMapsAdapter.fetchNearbyPlaces).toHaveBeenCalledTimes(1);
 
         expect(mockGoogleMapsAdapter.fetchNearbyPlaces).toHaveBeenCalledWith({ 
-            lat: 10, 
-            lon: 20 
+            lat: -22.951321545009705, 
+            lon: -43.21040413125191
         });
     });
 })
