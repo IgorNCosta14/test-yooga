@@ -40,14 +40,19 @@ export class Utils implements IUtils {
         latitude: number; 
         longitude: number;
     }[] {
-        const filePath = path.join(__dirname, '../data', fileName);
-        const data = fs.readFileSync(filePath, 'utf8');
-
-        return data.split('\n').slice(1).map(line => {
-            const [lat, lon] = line.trim().split(' ');
-
-            return { latitude: parseFloat(lat), longitude: parseFloat(lon) };
-        });
+        try {
+            const filePath = path.join(__dirname, '../data', fileName);
+            
+            const data = fs.readFileSync(filePath, 'utf8');
+    
+            return data.split('\n').slice(1).map(line => {
+                const [lat, lon] = line.trim().split(' ');
+    
+                return { latitude: parseFloat(lat), longitude: parseFloat(lon) };
+            });
+        } catch (error) {
+            throw new Error("Failed to read coordinates file.");
+        }
     }
 
     validateCoordinatesFile({ fileName }: { fileName: string; }): boolean {
