@@ -1,5 +1,5 @@
 export interface IGoogleMapsAdapter {
-    fetchNearbyPlaces({ lat, lon }: { lat: number; lon: number; }): Promise<IFetchNearbyPlacesResponse[]> 
+    fetchNearbyPlaces({ lat, lon }: { lat: number; lon: number; }): Promise<INearbySearchResponse> 
 }
 
 export interface IFetchNearbyPlacesResponse { 
@@ -18,4 +18,19 @@ export interface IDistancesUseCaseResponse {
         longitude: number;
     };
     nearbyPlaces: IFetchNearbyPlacesResponse[];
-} 
+}
+
+interface INearbyPlace {
+    name: string;
+    vicinity: string;
+    geometry: {
+        location:  {
+            lat: number;
+            lng: number;
+        };
+    }
+}
+
+export interface INearbySearchResponse {
+    results: INearbyPlace[];
+}
