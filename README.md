@@ -64,3 +64,38 @@ Exemplo de resposta em JSON para o **1º Desafio - Cálculo de Distâncias**:
             "Ponto 1 (Latitude -22.951321545009705, Longitude -43.21040413125191) - Distância 420600m"
         ]
     }
+
+#### **2º Desafio - Busca de Locais Próximos**
+
+**Input:**
+Faça uma requisição para o endpoint `/nearby` com as coordenadas de latitude e longitude:
+    ```bash
+    curl -X GET "http://localhost:3000/nearby?lat=-20.316635319330466&lon=-40.29026198968673"
+    ```
+
+**Output:**
+Exemplo de resposta em JSON para o **2º Desafio - Busca de Locais Próximos**:
+
+    {
+        "status": "success",
+        "message": "Search for nearby stores successfully executed",
+        "points": [
+            {
+                "point": 1,
+                "coordinates": {
+                    "latitude": -22.951321545009705,
+                    "longitude": -43.21040413125191
+                },
+                "nearbyPlaces": [
+                    {
+                        "name": "Loja das Paineiras",
+                        "address": "Christ the Redeemer Statue Rio, Rio de Janeiro",
+                        "location": {
+                            "lat": -22.9523654,
+                            "lng": -43.2108265
+                        }
+                    }
+                ]
+            }
+        ]
+    }
