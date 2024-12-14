@@ -13,7 +13,7 @@ export interface IFetchNearbyPlacesResponse {
 
 export interface IDistancesUseCaseResponse { 
     point: number;
-    coordenates: {
+    coordinates: {
         latitude: number;
         longitude: number;
     };
