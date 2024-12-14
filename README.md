@@ -20,8 +20,8 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/nearby-locations-api.git
-    cd nearby-locations-api
+    git clone https://github.com/IgorNCosta14/teste-yooga.git
+    cd teste-yooga
 
 2. Instale as dependências do projeto:
     ```bash
@@ -42,14 +42,33 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
 
 6. Teste os endpoints disponíveis:
 
-- **Cálculo de Distâncias**:
-    Faça uma requisição para o endpoint `/distances` com as coordenadas de latitude e longitude:
-    ```bash
-    curl -X GET "http://localhost:3000/distances?lat=-20.316635319330466&lon=-40.29026198968673"
-    ```
+#### **1º Desafio - Cálculo de Distâncias**
+
+**Input:**
+Faça uma requisição `GET` para o endpoint `/distances` com as coordenadas fornecidas:
+
+```bash
+curl -X GET "http://localhost:3000/distances?lat=-20.316635319330466&lon=-40.29026198968673"
 
 - **Busca de Locais Próximos**:
     Faça uma requisição para o endpoint `/nearby` com as coordenadas de latitude e longitude:
     ```bash
     curl -X GET "http://localhost:3000/nearby?lat=-20.316635319330466&lon=-40.29026198968673"
     ```
+**Output:**
+
+Exemplo de resposta em JSON para o **1º Desafio - Cálculo de Distâncias**:
+
+```json
+{
+    "status": "success",
+    "message": "Distances calculated successfully.",
+    "distances": [
+        {
+            "point": 1,
+            "latitude": -22.951321545009705,
+            "longitude": -43.21040413125191,
+            "distance": 456.78
+        }, ...
+    ]
+}
