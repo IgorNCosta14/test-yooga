@@ -69,9 +69,9 @@ Exemplo de resposta em JSON para o **1º Desafio - Cálculo de Distâncias**:
 
 **Input:**
 Faça uma requisição para o endpoint `/nearby` com as coordenadas de latitude e longitude:
-    ```bash
-    curl -X GET "http://localhost:3000/nearby?lat=-20.316635319330466&lon=-40.29026198968673"
-    ```
+```bash
+curl -X GET "http://localhost:3000/nearby?lat=-20.316635319330466&lon=-40.29026198968673"
+```
 
 **Output:**
 Exemplo de resposta em JSON para o **2º Desafio - Busca de Locais Próximos**:
