@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { DistancesUseCase } from "../useCase/Distances.userCase";
+import { DistancesUseCase } from "../useCases/Distances.userCase";
 import { plainToInstance } from "class-transformer";
 import { DistancesDTO } from "../validators/distances.dto";
 import { validate } from "class-validator";
 import { container } from "tsyringe";
-import { GetCoordinatesUseCase } from "../useCase/GetCoordinates.useCase";
+import { GetCoordinatesUseCase } from "../useCases/GetCoordinates.useCase";
 
 export class LocationDistancesController {
     async handle(req: Request, res: Response): Promise<Response> {

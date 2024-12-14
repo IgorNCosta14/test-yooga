@@ -1,5 +1,5 @@
 import { IGoogleMapsAdapter } from "../interfaces/googleMapsAdapter.interface";
-import { NearbyUseCase } from "../useCase/Nearby.useCase";
+import { NearbyUseCase } from "../useCases/Nearby.useCase";
 
 describe("NearbyUseCase", () => {
     let nearbyUseCase: NearbyUseCase;

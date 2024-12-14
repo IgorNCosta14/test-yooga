@@ -1,7 +1,7 @@
 // import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
-import { IHaversine, IUtils } from '../interfaces/utils.interfaces';
+import { IHaversine, IUtils } from '../interfaces/utils.interface';
 
 export class Utils implements IUtils {
     haversine({ lat1, lon1, lat2, lon2 }: IHaversine): number {

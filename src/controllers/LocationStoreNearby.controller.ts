@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { NearbyUseCase } from "../useCase/Nearby.useCase";
-import { GetCoordinatesUseCase } from "../useCase/GetCoordinates.useCase";
+import { NearbyUseCase } from "../useCases/Nearby.useCase";
+import { GetCoordinatesUseCase } from "../useCases/GetCoordinates.useCase";
 
 export class LocationNearbyController {    
     async handle(req: Request, res: Response): Promise<Response> {

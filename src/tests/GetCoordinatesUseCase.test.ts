@@ -1,5 +1,5 @@
-import { IUtils } from "../interfaces/utils.interfaces";
-import { GetCoordinatesUseCase } from "../useCase/GetCoordinates.useCase";
+import { IUtils } from "../interfaces/utils.interface";
+import { GetCoordinatesUseCase } from "../useCases/GetCoordinates.useCase";
 
 describe("GetCoordinatesUseCase", () => {
     let getCoordinatesUseCase: GetCoordinatesUseCase;

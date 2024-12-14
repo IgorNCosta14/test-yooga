@@ -1,4 +1,4 @@
-import { IUtils } from "../interfaces/utils.interfaces";
+import { IUtils } from "../interfaces/utils.interface";
 import { Utils } from "../utils";
 
 export class GetCoordinatesUseCase {

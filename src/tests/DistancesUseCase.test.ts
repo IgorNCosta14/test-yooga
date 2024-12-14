@@ -1,5 +1,5 @@
-import { DistancesUseCase } from "../useCase/Distances.userCase";
-import { IUtils } from "../interfaces/utils.interfaces";
+import { DistancesUseCase } from "../useCases/Distances.userCase";
+import { IUtils } from "../interfaces/utils.interface";
 
 describe("DistancesUseCase", () => {
     let distancesUseCase: DistancesUseCase;
