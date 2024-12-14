@@ -5,6 +5,19 @@ import { IHaversine, IUtils } from '../interfaces/utils.interfaces';
 
 export class Utils implements IUtils {
     haversine({ lat1, lon1, lat2, lon2 }: IHaversine): number {
+        function isValidCoordinate(value: number, min: number, max: number): boolean {
+            return value >= min && value <= max;
+        }
+    
+        if (
+            !isValidCoordinate(lat1, -90, 90) ||
+            !isValidCoordinate(lat2, -90, 90) ||
+            !isValidCoordinate(lon1, -180, 180) ||
+            !isValidCoordinate(lon2, -180, 180)
+        ) {
+            throw new Error('Invalid coordinates. Ensure latitudes are between -90 and 90, and longitudes are between -180 and 180.');
+        }
+
         const EARTH_RADIUS = 6371e3;
         function toRad(value: number): number {
             return (value * Math.PI) / 180;
