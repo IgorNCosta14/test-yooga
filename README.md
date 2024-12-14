@@ -46,29 +46,22 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
 
 **Input:**
 Faça uma requisição `GET` para o endpoint `/distances` com as coordenadas fornecidas:
-
-```bash
-curl -X GET "http://localhost:3000/distances?lat=-20.316635319330466&lon=-40.29026198968673"
-
-- **Busca de Locais Próximos**:
-    Faça uma requisição para o endpoint `/nearby` com as coordenadas de latitude e longitude:
     ```bash
-    curl -X GET "http://localhost:3000/nearby?lat=-20.316635319330466&lon=-40.29026198968673"
-    ```
-**Output:**
+    curl -X GET "http://localhost:3000/distances?lat=-20.316635319330466&lon=-40.29026198968673"
 
+**Output:**
 Exemplo de resposta em JSON para o **1º Desafio - Cálculo de Distâncias**:
 
-```json
-{
-    "status": "success",
-    "message": "Distances calculated successfully.",
-    "distances": [
-        {
-            "point": 1,
-            "latitude": -22.951321545009705,
-            "longitude": -43.21040413125191,
-            "distance": 456.78
-        }, ...
-    ]
-}
+    ```json
+    {
+        "status": "success",
+        "message": "Distances calculated successfully.",
+        "distances": [
+            {
+                "point": 1,
+                "latitude": -22.951321545009705,
+                "longitude": -43.21040413125191,
+                "distance": 456.78
+            }, ...
+        ]
+    }
