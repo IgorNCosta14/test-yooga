@@ -1,4 +1,4 @@
-import { DistancesUseCase } from "../useCases/Distances.userCase";
+import { DistancesUseCase } from "../useCases/Distances.useCase";
 import { IUtils } from "../interfaces/utils.interface";
 
 describe("DistancesUseCase", () => {

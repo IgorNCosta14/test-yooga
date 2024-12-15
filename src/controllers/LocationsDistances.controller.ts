@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DistancesUseCase } from "../useCases/Distances.userCase";
+import { DistancesUseCase } from "../useCases/Distances.useCase";
 import { plainToInstance } from "class-transformer";
 import { DistancesDTO } from "../validators/distances.dto";
 import { validate } from "class-validator";
