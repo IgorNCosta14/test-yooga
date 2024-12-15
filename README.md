@@ -18,10 +18,17 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
 
 ## Instalação
 
-1. Clone the repository:
+1. Abra o projeto:
     ```bash
     git clone https://github.com/IgorNCosta14/teste-yooga.git
+    ```
+
+    ```bash
     cd teste-yooga
+    ```
+
+    ```bash
+    code .
     ```
 
 2. Instale as dependências do projeto:
