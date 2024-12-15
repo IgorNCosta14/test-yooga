@@ -49,7 +49,7 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
 
 5. Inicie o servidor:
    ```bash
-   npm start
+   npm run start
     ```
 
 ## Teste os endpoints disponíveis:
