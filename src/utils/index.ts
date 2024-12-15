@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
 import { IHaversine, IUtils } from '../interfaces/utils.interface';
@@ -58,15 +57,15 @@ export class Utils implements IUtils {
     validateCoordinatesFile({ fileName }: { fileName: string; }): boolean {
         try {
             const filePath = path.join(__dirname, '../data', fileName);
+
             const content = fs.readFileSync(filePath, 'utf-8');
 
             const lines = content.split('\n').map(line => line.trim());
-   
+            
             const isValid = lines.slice(1).every(line => {
                 const regex = /^-?\d+(\.\d+)?,\s?-?\d+(\.\d+)?$/;
                 return regex.test(line);
             });
-
             return isValid;
         } catch (error) {
             return false;
