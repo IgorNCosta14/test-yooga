@@ -54,6 +54,8 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
 
 ## Teste os endpoints disponíveis:
 
+Os exemplos foram feitos utilizando o comando curl. Contudo, recomendamos o uso de ferramentas como Postman ou Insomnia para facilitar o envio de requisições e a leitura das respostas JSON.
+
 #### **1º Desafio - Cálculo de Distâncias**
 
 **Input:**
