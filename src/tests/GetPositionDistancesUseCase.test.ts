@@ -1,8 +1,8 @@
-import { DistancesUseCase } from "../useCases/Distances.useCase";
+import { GetPositionDistancesUseCase } from "../useCases/GetPositionDistances.useCase";
 import { IUtils } from "../interfaces/utils.interface";
 
-describe("DistancesUseCase", () => {
-    let distancesUseCase: DistancesUseCase;
+describe("GetPositionDistancesUseCase", () => {
+    let getPositionDistancesUseCase: GetPositionDistancesUseCase;
     let mockUtils: jest.Mocked<IUtils>;
 
     beforeEach(() => {
@@ -12,8 +12,8 @@ describe("DistancesUseCase", () => {
             validateCoordinatesFile: jest.fn(),
         };
 
-        distancesUseCase = new DistancesUseCase();
-        distancesUseCase['utils'] = mockUtils;
+        getPositionDistancesUseCase = new GetPositionDistancesUseCase();
+        getPositionDistancesUseCase['utils'] = mockUtils;
     });
 
     it("should calculate the distance between the coordinates", async () => {
@@ -24,7 +24,7 @@ describe("DistancesUseCase", () => {
             { latitude: 30.328676601368205, longitude: 35.44443730801659 },
         ];
 
-        const result = await distancesUseCase.execute({
+        const result = await getPositionDistancesUseCase.execute({
             lat: -20.316635319330466,
             lon: -40.29026198968673,
             coordinates,
@@ -52,7 +52,7 @@ describe("DistancesUseCase", () => {
 
     it("should calculate the distance between the coordinates", async () => {
         await expect(
-            distancesUseCase.execute({
+            getPositionDistancesUseCase.execute({
                 lat: 1,
                 lon: undefined as unknown as number,
                 coordinates: [],
@@ -61,7 +61,7 @@ describe("DistancesUseCase", () => {
     });
 
     it("should return an empty list if there are no coordinates", async () => {
-        const result = await distancesUseCase.execute({
+        const result = await getPositionDistancesUseCase.execute({
             lat: 5,
             lon: 10,
             coordinates: [],

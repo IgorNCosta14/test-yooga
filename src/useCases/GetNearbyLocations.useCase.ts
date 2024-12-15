@@ -2,7 +2,7 @@ import { inject, injectable } from "tsyringe";
 import { IDistancesUseCaseResponse, IGoogleMapsAdapter } from "../interfaces/googleMapsAdapter.interface";
 
 @injectable()
-export class NearbyUseCase {
+export class GetNearbyLocationsUseCase {
     constructor(
         @inject("GoogleMapsAdapter")
         private googleMapsAdapter: IGoogleMapsAdapter

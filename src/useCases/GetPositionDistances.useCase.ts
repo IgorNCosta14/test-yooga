@@ -1,7 +1,7 @@
 import { IUtils } from "../interfaces/utils.interface";
 import { Utils } from "../utils";
 
-export class DistancesUseCase {
+export class GetPositionDistancesUseCase {
     private utils: IUtils
 
     constructor() {

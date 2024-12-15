@@ -1,7 +1,7 @@
 import { Type } from 'class-transformer';
 import { IsNumber, IsNotEmpty, Min, Max } from 'class-validator';
 
-export class DistancesDTO {
+export class GetPositionDistancesDTO {
     @IsNotEmpty({ message: 'Latitude (lat) is required.' })
     @IsNumber({}, { message: 'Latitude (lat) must be a number.' })
     @Min(-90, { message: 'Latitude (lat) must be between -90 and 90.' })

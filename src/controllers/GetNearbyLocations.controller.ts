@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
-import { NearbyUseCase } from "../useCases/Nearby.useCase";
+import { GetNearbyLocationsUseCase } from "../useCases/GetNearbyLocations.useCase";
 import { GetCoordinatesUseCase } from "../useCases/GetCoordinates.useCase";
 
-export class LocationNearbyController {    
+export class GetNearbyLocationsController {    
     async handle(req: Request, res: Response): Promise<Response> {
         try {
             const getCoordinatesUseCase = container.resolve(GetCoordinatesUseCase);
             const coordinates = await getCoordinatesUseCase.execute("LatitudeLongitude.txt");
             
-            const nearbyUseCase = container.resolve(NearbyUseCase);
-            const response = await nearbyUseCase.execute({
+            const getNearbyLocationsUseCase = container.resolve(GetNearbyLocationsUseCase);
+            const response = await getNearbyLocationsUseCase.execute({
                 coordinates
             });
         
