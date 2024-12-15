@@ -70,7 +70,7 @@ describe('Utils - Test validateCoordinatesFile method', () => {
 
         const result = utils.validateCoordinatesFile({ fileName: 'nonExistentFile.txt' });
 
-        expect(result).toBe(true);
+        expect(result).toBe(false);
     });
 })
 
