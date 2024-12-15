@@ -20,11 +20,11 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
 
 1. Abra o projeto:
     ```bash
-    git clone https://github.com/IgorNCosta14/teste-yooga.git
+    git clone https://github.com/IgorNCosta14/test-yooga.git
     ```
 
     ```bash
-    cd teste-yooga
+    cd test-yooga
     ```
 
     ```bash
