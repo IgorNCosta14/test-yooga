@@ -1,17 +1,17 @@
 import { Request, Response } from "express";
-import { DistancesUseCase } from "../useCases/Distances.useCase";
+import { GetPositionDistancesUseCase } from "../useCases/GetPositionDistances.useCase";
 import { plainToInstance } from "class-transformer";
-import { DistancesDTO } from "../validators/distances.dto";
+import { GetPositionDistancesDTO } from "../validators/GetPositionDistances.dto";
 import { validate } from "class-validator";
 import { container } from "tsyringe";
 import { GetCoordinatesUseCase } from "../useCases/GetCoordinates.useCase";
 
-export class LocationDistancesController {
+export class GetPositionDistancesController {
     async handle(req: Request, res: Response): Promise<Response> {
         try {
             const { lat, lon } = req.query;
 
-            const dto = plainToInstance(DistancesDTO, { lat, lon });
+            const dto = plainToInstance(GetPositionDistancesDTO, { lat, lon });
 
             const errors = await validate(dto);
             if (errors.length > 0) {
@@ -27,8 +27,8 @@ export class LocationDistancesController {
             const getCoordinatesUseCase = container.resolve(GetCoordinatesUseCase);
             const coordinates = await getCoordinatesUseCase.execute("LatitudeLongitude.txt");
 
-            const distancesUseCase = container.resolve(DistancesUseCase);
-            const response = await distancesUseCase.execute({
+            const getPositionDistancesUseCase = container.resolve(GetPositionDistancesUseCase);
+            const response = await getPositionDistancesUseCase.execute({
                 lat: dto.lat,
                 lon: dto.lon,
                 coordinates

@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { LocationDistancesController } from "../controllers/LocationsDistances.controller";
-import { LocationNearbyController } from "../controllers/LocationStoreNearby.controller";
+import { GetNearbyLocationsController } from "../controllers/GetNearbyLocations.controller";
+import { GetPositionDistancesController } from "../controllers/GetPositionDistances.controller";
 
 export const router = Router();
 
-const locationDistancesController = new LocationDistancesController();
-const locationNearbyController = new LocationNearbyController();
+const getPositionDistancesController = new GetPositionDistancesController();
+const getNearbyLocationsController = new GetNearbyLocationsController();
 
-router.get("/distances", locationDistancesController.handle);
-router.get("/nearby", locationNearbyController.handle);
+router.get("/distances", getPositionDistancesController.handle);
+router.get("/nearby", getNearbyLocationsController.handle);

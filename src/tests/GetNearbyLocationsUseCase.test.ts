@@ -1,8 +1,8 @@
 import { IGoogleMapsAdapter } from "../interfaces/googleMapsAdapter.interface";
-import { NearbyUseCase } from "../useCases/Nearby.useCase";
+import { GetNearbyLocationsUseCase } from "../useCases/GetNearbyLocations.useCase";
 
-describe("NearbyUseCase", () => {
-    let nearbyUseCase: NearbyUseCase;
+describe("GetNearbyLocationsUseCase", () => {
+    let getNearbyLocationsUseCase: GetNearbyLocationsUseCase;
     let mockGoogleMapsAdapter: jest.Mocked<IGoogleMapsAdapter>;
 
     beforeEach(() => {
@@ -10,7 +10,7 @@ describe("NearbyUseCase", () => {
             fetchNearbyPlaces: jest.fn()
         };
 
-        nearbyUseCase = new NearbyUseCase(mockGoogleMapsAdapter);
+        getNearbyLocationsUseCase = new GetNearbyLocationsUseCase(mockGoogleMapsAdapter);
     });
 
     it("should return nearby places for each coordinate", async () => {
@@ -70,7 +70,7 @@ describe("NearbyUseCase", () => {
             { latitude: 30.328676601368205, longitude: 35.44443730801659 },
         ];
 
-        const result = await nearbyUseCase.execute({ coordinates });
+        const result = await getNearbyLocationsUseCase.execute({ coordinates });
 
         expect(result).toEqual([
             {
@@ -120,7 +120,7 @@ describe("NearbyUseCase", () => {
         ];
 
         await expect(
-            nearbyUseCase.execute({ coordinates })
+            getNearbyLocationsUseCase.execute({ coordinates })
         ).rejects.toThrow("Error when searching: Google Maps API error");
 
         expect(mockGoogleMapsAdapter.fetchNearbyPlaces).toHaveBeenCalledTimes(1);
