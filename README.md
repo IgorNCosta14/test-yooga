@@ -31,25 +31,34 @@ Este projeto é uma aplicação backend desenvolvida para calcular distâncias e
     code .
     ```
 
-2. Instale as dependências do projeto:
-    ```bash
-    npm install
-    ```
-
-3. Crie um arquivo `.env` na raiz do projeto e configure a chave de API do Google Maps:
+2. Crie um arquivo `.env` na raiz do projeto e configure a chave de API do Google Maps:
     ```env
     GOOGLE_MAPS_API_KEY=your_google_maps_api_key
     PORT=3000
     ```
 
-4. Compile o projeto:
-   ```bash
-   npm run build
+### Opção 1: Usando Docker
+
+1. Construa e inicie o container:
+    ```bash
+    docker-compose up
     ```
 
-5. Inicie o servidor:
-   ```bash
-   npm run start
+### Opção 2: Rodando Localmente
+
+1. Instale as dependências do projeto:
+    ```bash
+    npm install
+    ```
+
+2. Compile o projeto:
+    ```bash
+    npm run build
+    ```
+
+3. Inicie o servidor:
+    ```bash
+    npm run start
     ```
 
 ## Teste os endpoints disponíveis:
